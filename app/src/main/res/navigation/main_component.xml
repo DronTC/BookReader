@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_component"
+    app:startDestination="@id/readingNowFragment">
+
+    <fragment
+        android:id="@+id/readingNowFragment"
+        android:name="com.example.bookreader.ReadingNowFragment"
+        android:label="fragment_reading_now"
+        tools:layout="@layout/fragment_reading_now" />
+    <fragment
+        android:id="@+id/booksReadFragment"
+        android:name="com.example.bookreader.BooksReadFragment"
+        android:label="fragment_books_read"
+        tools:layout="@layout/fragment_books_read" />
+    <fragment
+        android:id="@+id/booksAndDocumentsFragment2"
+        android:name="com.example.bookreader.BooksAndDocumentsFragment"
+        android:label="fragment_books_and_documents"
+        tools:layout="@layout/fragment_books_and_documents" />
+</navigation>
