@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_reading_now"
-            android:title="@string/reading_now" />
-        <item
-            android:id="@+id/nav_books_and_documents"
-            android:title="@string/books_and_documents" />
-        <item
-            android:id="@+id/nav_books_read"
-            android:title="@string/books_read" />
-    </group>
+    <item
+        android:id="@+id/nav_reading_now"
+        android:title="@string/reading_now" />
+    <item
+        android:id="@+id/nav_books_and_documents"
+        android:title="@string/books_and_documents" />
+    <item
+        android:id="@+id/nav_books_read"
+        android:title="@string/books_read" />
 
 </menu>

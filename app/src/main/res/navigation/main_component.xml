@@ -16,7 +16,7 @@
         android:label="fragment_books_read"
         tools:layout="@layout/fragment_books_read" />
     <fragment
-        android:id="@+id/booksAndDocumentsFragment2"
+        android:id="@+id/booksAndDocumentsFragment"
         android:name="com.example.bookreader.BooksAndDocumentsFragment"
         android:label="fragment_books_and_documents"
         tools:layout="@layout/fragment_books_and_documents" />

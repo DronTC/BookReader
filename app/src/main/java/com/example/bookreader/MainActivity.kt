@@ -2,34 +2,41 @@ package com.example.bookreader
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navView: NavigationView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val navigationView = findViewById<NavigationView>(R.id.navigation_view)
+        navigationView.setNavigationItemSelectedListener(this)
+    }
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.nav_reading_now -> {
+                replaceFragment(ReadingNowFragment())
+                true
+            }
 
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navView = findViewById(R.id.navigation_view)
+            R.id.nav_books_and_documents -> {
+                replaceFragment(BooksAndDocumentsFragment())
+                true
+            }
 
-        // Setup toggle button
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+            R.id.nav_books_read -> {
+                replaceFragment(BooksReadFragment())
+                true
+            }
 
-        // Setup navigation item click listener
-        navView.setNavigationItemSelectedListener { menuItem ->
-            handleNavigationItemClick(menuItem.itemId)
-            true
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun handleNavigationItemClick(itemId: Int) {
-        // Handle navigation item click here
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment)
+            .commit()
     }
 }

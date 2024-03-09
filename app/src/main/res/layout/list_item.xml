@@ -6,11 +6,12 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_margin="5dp"
-        android:background="@color/light_gray">
+        android:background="#330066">
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="100dp"
             android:layout_height="130dp"
+            android:background="@color/white"
             android:layout_margin="5dp"/>
 
         <TextView

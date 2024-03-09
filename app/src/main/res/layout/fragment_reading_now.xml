@@ -12,7 +12,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/light_gray">
+            android:background="@color/indigo">
             <FrameLayout
                 android:id="@+id/menu_bar_frame"
                 android:layout_width="wrap_content"
@@ -22,9 +22,14 @@
                 <Button
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="@color/light_gray"
+                    android:backgroundTint="@color/indigo"
                     android:importantForAccessibility="no"/>
-
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/three_lines_icon"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"/>
             </FrameLayout>
 
             <TextView
@@ -32,12 +37,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="15dp"
-
                 android:layout_marginBottom="10dp"
                 android:layout_toEndOf="@+id/menu_bar_frame"
                 android:text="@string/reading_now"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                style="@style/CustomTheme"
                 android:textStyle="bold" />
 
             <FrameLayout
@@ -52,8 +55,14 @@
                 <Button
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="@color/light_gray"
+                    android:backgroundTint="@color/indigo"
                     android:importantForAccessibility="no" />
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/three_dots_icon"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"/>
 
             </FrameLayout>
 
@@ -68,8 +77,14 @@
                 <Button
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="@color/light_gray"
-                    android:importantForAccessibility="no" />
+                    android:backgroundTint="@color/indigo"
+                    android:importantForAccessibility="no"/>
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/search_icon"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"/>
 
             </FrameLayout>
         </RelativeLayout>
