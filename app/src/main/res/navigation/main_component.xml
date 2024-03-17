@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/readingNowFragment"
-        android:name="com.example.bookreader.ReadingNowFragment"
+        android:name="com.example.bookreader.ui.ReadingNowFragment"
         android:label="fragment_reading_now"
         tools:layout="@layout/fragment_reading_now" />
     <fragment
         android:id="@+id/booksReadFragment"
-        android:name="com.example.bookreader.BooksReadFragment"
+        android:name="com.example.bookreader.ui.BooksReadFragment"
         android:label="fragment_books_read"
         tools:layout="@layout/fragment_books_read" />
     <fragment
         android:id="@+id/booksAndDocumentsFragment"
-        android:name="com.example.bookreader.BooksAndDocumentsFragment"
+        android:name="com.example.bookreader.ui.BooksAndDocumentsFragment"
         android:label="fragment_books_and_documents"
         tools:layout="@layout/fragment_books_and_documents" />
 </navigation>
