@@ -4,7 +4,8 @@
     <string name="close_drawer">Закрыть</string>
 
     <string name="reading_now">Читаю сейчас</string>
-    <string name="books_and_documents">Книги и документы</string>
+    <string name="documents">Документы</string>
     <string name="books_read">Прочитанные</string>
     <string name="file_name">Название файла</string>
+    <string name="author">Автор</string>
 </resources>
