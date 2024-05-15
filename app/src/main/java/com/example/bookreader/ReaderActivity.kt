@@ -12,12 +12,26 @@ class ReaderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reader)
 
-
-        val doc = FbParser.createDoc(this, R.raw.grig)
         val textView = findViewById<TextView>(R.id.bookTextView)
         val backButton = findViewById<Button>(R.id.back_button)
+        val bookName = intent.getStringExtra("BOOK_NAME")
 
-        textView.append(doc.getElementsByTagName("body").item(0).textContent)
+        if(bookName == FbParser.createDoc(this, R.raw.grig).getElementsByTagName("book-title").item(0).textContent) {
+            val doc = FbParser.createDoc(this, R.raw.grig)
+            textView.append(doc.getElementsByTagName("body").item(0).textContent)
+        }
+        else if(bookName == FbParser.createDoc(this, R.raw.warhammer).getElementsByTagName("book-title").item(0).textContent){
+            val doc = FbParser.createDoc(this, R.raw.warhammer)
+            textView.append(doc.getElementsByTagName("body").item(0).textContent)
+        }
+        else if(bookName == FbParser.createDoc(this, R.raw.gardar).getElementsByTagName("book-title").item(0).textContent){
+            val doc = FbParser.createDoc(this, R.raw.gardar)
+            textView.append(doc.getElementsByTagName("body").item(0).textContent)
+        }
+        else if(bookName == FbParser.createDoc(this, R.raw.lavcraft).getElementsByTagName("book-title").item(0).textContent){
+            val doc = FbParser.createDoc(this, R.raw.lavcraft)
+            textView.append(doc.getElementsByTagName("body").item(0).textContent)
+        }
 
         backButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)

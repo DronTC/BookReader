@@ -50,6 +50,7 @@
                 android:layout_toEndOf="@+id/menu_bar_frame"
                 android:maxLines="1"
                 android:ellipsize="end"
+                android:fontFamily="@font/lato_medium"
                 android:text="@string/reading_now"
                 android:textStyle="bold"
                 />
@@ -104,9 +105,13 @@
             android:id="@+id/fragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="450dp"
             app:defaultNavHost="true"
             app:navGraph="@navigation/main_component" />
+        <WebView
+            android:id="@+id/advertisementWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

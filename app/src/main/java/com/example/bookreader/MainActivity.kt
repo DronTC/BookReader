@@ -2,6 +2,7 @@ package com.example.bookreader
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebView
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+        val mWebView = findViewById<WebView>(R.id.advertisementWebView)
+
+
+        mWebView.loadUrl("https://t.me/chitai_gorod_official");
+        this.setTitle("WebView")
     }
     private fun changeFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction()

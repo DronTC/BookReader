@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.TextView
 import com.example.bookreader.BookAdapter
 import com.example.bookreader.FbParser
 import com.example.bookreader.R
@@ -22,21 +23,24 @@ class BooksReadFragment : Fragment() {
         val bookList = listOf(
             FbParser.Parse(requireContext(), R.raw.grig),
             FbParser.Parse(requireContext(), R.raw.gardar),
-            FbParser.Parse(requireContext(), R.raw.warhammer)
+            FbParser.Parse(requireContext(), R.raw.warhammer),
+            FbParser.Parse(requireContext(), R.raw.lavcraft)
         )
 
         val adapter = BookAdapter(requireContext(), bookList)
         val listView: ListView = view.findViewById(R.id.listView)
         listView.adapter = adapter
 
-        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            val selectedItem = parent.getItemAtPosition(position).toString()
-
-            val intent = Intent(requireContext(), ReaderActivity::class.java)
-            intent.putExtra("selectedItem", selectedItem)
-            startActivity(intent)
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val textView = view.findViewById<TextView>(R.id.item_title)
+            changeActivity(textView.text.toString())
         }
 
         return view
+    }
+    private fun changeActivity(name: String){
+        val intent = Intent(activity, ReaderActivity::class.java)
+        intent.putExtra("BOOK_NAME", name)
+        startActivity(intent)
     }
 }
